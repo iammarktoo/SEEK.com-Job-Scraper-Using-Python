@@ -1,17 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 
+from selenium_setup import create_driver
 
 #Function to scrape a single job ID
 def scrape_info(id):
-    allJobsInfo = []
     driver = create_driver()
     job_url = "https://www.seek.com.au/job/"+str(id)+"&ref=search-standalone"
     job_info = {
@@ -60,8 +57,6 @@ def scrape_info(id):
         desc_tag = soup.find("div",{"data-automation":"jobAdDetails"})
         if desc_tag:
             job_info["description"] = desc_tag.get_text(strip=True)
-
-        allJobsInfo.append(job_info)
     except:
         print(f"Error with job ID {id}: {e}")
     finally:

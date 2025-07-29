@@ -1,5 +1,5 @@
-from job_info_scraper import scrape_info
-from job_id_scraper import get_job_ids
+from utils.job_info_scraper import scrape_info
+from utils.job_id_scraper import get_job_ids
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 job_ids = get_job_ids

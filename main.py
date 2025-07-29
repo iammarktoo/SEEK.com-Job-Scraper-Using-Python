@@ -1,6 +1,7 @@
 from utils.job_info_scraper import scrape_info
 from utils.job_id_scraper import get_job_ids
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import pandas as pd
 
 job_ids = get_job_ids()
 all_jobs_info = []
@@ -12,3 +13,6 @@ with ThreadPoolExecutor(max_workers=5) as executor:
         all_jobs_info.append(result)
 
 print(f"\nScraped {len(all_jobs_info)} job listings")
+df = pd.DataFrame(all_jobs_info)
+df.to_csv("scraped_jobs.csv", index=False)
+print("Saved job listings to scraped_jobs.csv")

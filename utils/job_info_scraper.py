@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import re
 
-from selenium_setup import create_driver
+from utils.selenium_setup import create_driver
 
 #Function to scrape a single job ID
 def scrape_info(id):

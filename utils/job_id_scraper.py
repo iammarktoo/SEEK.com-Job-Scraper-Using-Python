@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import time
 
 from config import BASE_URL, CATEGORY, REGION, DATE_RANGE, SELENIUM_TIMEOUT
-from selenium_setup import create_driver
+from utils.selenium_setup import create_driver
 
 
 def get_job_ids():

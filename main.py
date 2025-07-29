@@ -2,7 +2,7 @@ from utils.job_info_scraper import scrape_info
 from utils.job_id_scraper import get_job_ids
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-job_ids = get_job_ids
+job_ids = get_job_ids()
 all_jobs_info = []
 
 with ThreadPoolExecutor(max_workers=5) as executor:

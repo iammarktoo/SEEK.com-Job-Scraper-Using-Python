@@ -13,7 +13,6 @@ A powerful and modular Python-based web scraper that extracts job listings from 
   - Category
   - Posted date
   - Full job description
-  - Whether the job is featured
 - 🚀 Parallel processing for fast scraping
 - 🧩 Modular codebase for easy maintenance and extension
 

@@ -19,7 +19,6 @@ def scrape_info(id):
             "category":None,
             "postedDate":None,
             "description": "",
-            "featured":False,
             "jobURL":job_url,
     }
 
